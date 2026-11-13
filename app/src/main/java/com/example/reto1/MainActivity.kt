@@ -1,6 +1,7 @@
 package com.example.reto1
 
 import android.os.Bundle
+import android.widget.SeekBar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -30,9 +31,10 @@ class MainActivity : AppCompatActivity() {
         binding.webview.loadUrl("https://developer.android.com")
 
         binding.chkAndroid.setOnCheckedChangeListener { _, _ -> actualizarTecnologias() }
-        binding.chkReact.setOnCheckedChangeListener {_, _ -> actualizarTecnologias() }
-        binding.chkFlutter.setOnCheckedChangeListener {_, _ -> actualizarTecnologias() }
+        binding.chkReact.setOnCheckedChangeListener { _, _ -> actualizarTecnologias() }
+        binding.chkFlutter.setOnCheckedChangeListener { _, _ -> actualizarTecnologias() }
 
+        actualizarSeekBar()
 
     }
 
@@ -55,7 +57,19 @@ class MainActivity : AppCompatActivity() {
         if (listaTecnologias.isEmpty()) {
             binding.txtResultado.text = "Aquí aparecerá el resultado"
         } else {
-            binding.txtResultado.text = "Tecnologias marcadas: ${listaTecnologias.joinToString(" - ")}"
+            binding.txtResultado.text =
+                "Tecnologias marcadas: ${listaTecnologias.joinToString(" - ")}"
         }
+    }
+
+    private fun actualizarSeekBar() {
+        binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                binding.txtSelecionado.text = "Nivel seleccionado: $progress"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
     }
 }

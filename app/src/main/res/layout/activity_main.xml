@@ -185,6 +185,7 @@
             android:entries="@array/cursos"/>
 
         <TextView
+            android:id="@+id/txtSelecionado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nivel_seleccionado"
@@ -193,6 +194,7 @@
             android:layout_marginTop="20dp"/>
 
         <SeekBar
+            android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="100"
