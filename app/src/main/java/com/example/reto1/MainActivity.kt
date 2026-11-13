@@ -8,11 +8,16 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.reto1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
@@ -24,7 +29,33 @@ class MainActivity : AppCompatActivity() {
 
         binding.webview.loadUrl("https://developer.android.com")
 
+        binding.chkAndroid.setOnCheckedChangeListener { _, _ -> actualizarTecnologias() }
+        binding.chkReact.setOnCheckedChangeListener {_, _ -> actualizarTecnologias() }
+        binding.chkFlutter.setOnCheckedChangeListener {_, _ -> actualizarTecnologias() }
 
 
+    }
+
+    private fun actualizarTecnologias() {
+
+        val listaTecnologias = mutableListOf<String>()
+
+        if (binding.chkAndroid.isChecked) {
+            listaTecnologias.add("Android")
+        }
+
+        if (binding.chkReact.isChecked) {
+            listaTecnologias.add("React")
+        }
+
+        if (binding.chkFlutter.isChecked) {
+            listaTecnologias.add("Flutter")
+        }
+
+        if (listaTecnologias.isEmpty()) {
+            binding.txtResultado.text = "Aquí aparecerá el resultado"
+        } else {
+            binding.txtResultado.text = "Tecnologias marcadas: ${listaTecnologias.joinToString(" - ")}"
+        }
     }
 }
