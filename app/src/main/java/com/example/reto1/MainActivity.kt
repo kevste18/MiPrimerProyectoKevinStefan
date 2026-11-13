@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         actualizarSeekBar()
 
+        binding.btnGuardar.setOnClickListener { guardar() }
+
     }
 
     private fun actualizarTecnologias() {
@@ -71,5 +73,9 @@ class MainActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+    }
+
+    private fun guardar() {
+        binding.txtResultado.text = "Contenido Guardado Exitosamente!"
     }
 }
