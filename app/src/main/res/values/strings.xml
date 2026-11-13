@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Reto1</string>
+    <string name="componentes_android">Ejemplo de componentes Android</string>
+    <string name="mostrar_info">Componentes para mostrar informacion</string>
+    <string name="mostrar_txt">Este texto se muestra mediante un TextView.</string>
+    <string name="logo_android">Logo Android</string>
+    <string name="progreso">Progreso: 50%</string>
+    <string name="videoview">VideoView</string>
+    <string name="webview">WebView</string>
+    <string name="entrada_interaccion">Componentes de entrada e interacción</string>
+    <string name="nombre">Introduce tu nombre</string>
+    <string name="tecnologias">Seleciona tecnologías:</string>
+    <string name="android">Android</string>
+    <string name="react">React</string>
+    <string name="flutter">Flutter</string>
+    <string name="modalidad">Seleciona una modalidad:</string>
+    <string name="presencial">Presencial</string>
+    <string name="online">Online</string>
+    <string name="mixta">Mixta</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="seleciona_curso">Selecciona un curso</string>
+    <string name="nivel_seleccionado">Nivel seleccionado: 50</string>
+    <string name="resultado">Aquí aparecerá el resultado</string>
+    <string name="guardar_info">Guardar información</string>
+    <string-array name="cursos">
+        <item>1.º DAM</item>
+        <item>2.º DAM</item>
+        <item>1.º DAW</item>
+        <item>2.º DAW</item>
+        <item>1.º ASIR</item>
+        <item>2.º ASIR</item>
+    </string-array>
+</resources>
